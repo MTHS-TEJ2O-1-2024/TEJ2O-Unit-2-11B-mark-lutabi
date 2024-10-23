@@ -9,13 +9,15 @@
 let randomNumberOne: number = 0
 let randomNumberTwo: number = 0
 
+randomNumberOne = randint(0, 99)
+randomNumberTwo = randint(0, 99)
+
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
 // Display the first number
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
-    randomNumberOne = randint(0,99)
     basic.showString('#1:'+ randomNumberOne)
     basic.showIcon(IconNames.Happy)
 })
@@ -23,7 +25,6 @@ input.onButtonPressed(Button.A, function () {
 // Display the second number
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
-    randomNumberOne = randint(0, 99)
     basic.showString('#2:' + randomNumberTwo)
     basic.showIcon(IconNames.Happy)
 })
@@ -33,9 +34,11 @@ input.onGesture(Gesture.Shake, function () {
 basic.clearScreen()
  if ( randomNumberOne < randomNumberTwo){
 basic.showString(randomNumberOne + '<' + randomNumberTwo)
+basic.showIcon(IconNames.Happy)
  }
  else{
 basic.showString(randomNumberTwo + '>' + randomNumberOne)
+basic.showIcon(IconNames.Happy)
  }
 })
 
